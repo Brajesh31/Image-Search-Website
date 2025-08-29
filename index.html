@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Search</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="icon" href="./shape.png">
+  </head>
+
+  <body>
+    <img
+      src="https://wallpapercave.com/wp/wp2905430.jpg"
+      alt="background"
+      class="background-image"
+    />
+    <div class="container-box">
+      <div class="container glass">
+        <div class="headline">
+          <div class="image-icon">
+            <i class="fa-regular fa-image"></i>
+          </div>
+          <h1>PicKart Image Search</h1>
+        </div>
+
+        <form class="search-box">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search for images..."
+          />
+          <button id="search-button">Search</button>
+        </form>
+
+        <!-- <div id="image-gallery"></div> -->
+      </div>
+    </div>
+
+    <div class="search-results">
+      <div class="search-result">
+        <img
+          src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Mountain in Forest"
+        />
+        <a
+          href="https://unsplash.com/photos/landmark-photography-of-trees-near-rocky-mountain-under-blue-skies-daytime-ndN00KmbJ1c"
+          target="_blank"
+          >Mountain in Forest
+        </a>
+      </div>
+      <div class="search-result">
+        <img
+          src="https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Japanese Tori Gates"
+        />
+        <a
+          href="https://unsplash.com/photos/gray-pathway-between-red-and-black-wooden-pillar-NYyCqdBOKwc"
+          target="_blank"
+          >Japanese Tori Gates
+        </a>
+      </div>
+      <div class="search-result">
+        <img
+          src="https://images.unsplash.com/photo-1474511320723-9a56873867b5?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Cute Mountain Fox"
+        />
+        <a
+          href="https://unsplash.com/photos/brown-fox-on-snow-field-xUUZcpQlqpM"
+          target="_blank"
+          >Cute Mountain Fox
+        </a>
+      </div>
+    </div>
+
+    <button id="show-more-button">Show More</button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
