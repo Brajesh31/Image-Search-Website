@@ -3,46 +3,57 @@ name: Update README Automation
 on:
   workflow_dispatch:
   push:
+    paths-ignore:
+      - "README.md"
+      - "docs/**"
   schedule:
-    - cron: "0 * * * *"
+    - cron: "0 0 * * *"
 
 permissions:
   contents: write
 
+concurrency:
+  group: update-readme-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   update-readme:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 1
 
       - name: Update README timestamp
+        shell: bash
         run: |
-          DATE=$(date -u +"%Y-%m-%d %H:%M UTC")
+          set -euo pipefail
+          DATE="$(date -u +"%Y-%m-%d %H:%M UTC")"
           TIMESTAMP_LINE="Last updated: $DATE"
 
-          if [ -f README.md ]; then
-            if grep -q "Last updated:" README.md; then
-              sed -i "s/Last updated:.*/$TIMESTAMP_LINE/" README.md
-            else
-              printf "\n%s\n" "$TIMESTAMP_LINE" >> README.md
-            fi
+          if [[ -f README.md ]] && grep -q "^Last updated:" README.md; then
+            sed -i "s/^Last updated:.*/$TIMESTAMP_LINE/" README.md
+          elif [[ -f README.md ]]; then
+            printf "\n%s\n" "$TIMESTAMP_LINE" >> README.md
           else
-            printf "# Repository\n\n%s\n" "$TIMESTAMP_LINE" > README.md
+            printf "# Image Search Website\n\n%s\n" "$TIMESTAMP_LINE" > README.md
           fi
 
-          git config user.name "Brajesh31"
-          git config user.email "brajesh31.dev@gmail.com"
-
+      - name: Commit README update when changed
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "Brajesh Kumar"
+          git config user.email "brajesh31@users.noreply.github.com"
           git add README.md
 
           if git diff --cached --quiet; then
-            echo "No README changes detected."
+            echo "README is already up to date."
             exit 0
           fi
 
           git commit -m "chore: update README timestamp"
-          git push origin HEAD
+          git push
