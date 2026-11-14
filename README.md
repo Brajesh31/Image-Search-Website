@@ -6,29 +6,29 @@ A lightweight, browser-based image search application built with plain HTML, CSS
 
 ## Table of Contents
 
-1. [Overview](#overview)
-2. [Features](#features)
-3. [User Flow](#user-flow)
-4. [Technology Stack](#technology-stack)
-5. [Repository Structure](#repository-structure)
-6. [Requirements](#requirements)
-7. [Getting Started](#getting-started)
-8. [Unsplash API Configuration](#unsplash-api-configuration)
-9. [Using the Application](#using-the-application)
-10. [Application Architecture](#application-architecture)
-11. [API Integration](#api-integration)
-12. [Accessibility](#accessibility)
-13. [Security and Privacy](#security-and-privacy)
-14. [Error Handling](#error-handling)
-15. [Testing and Validation](#testing-and-validation)
-16. [Deployment](#deployment)
-17. [Troubleshooting](#troubleshooting)
-18. [Known Limitations](#known-limitations)
-19. [Roadmap](#roadmap)
-20. [Contributing](#contributing)
-21. [Support](#support)
-22. [License](#license)
-23. [Maintainer](#maintainer)
+1. [Overview](#1-overview)
+2. [Features](#2-features)
+3. [User Flow](#3-user-flow)
+4. [Technology Stack](#4-technology-stack)
+5. [Repository Structure](#5-repository-structure)
+6. [Requirements](#6-requirements)
+7. [Getting Started](#7-getting-started)
+8. [Unsplash API Configuration](#8-unsplash-api-configuration)
+9. [Using the Application](#9-using-the-application)
+10. [Application Architecture](#10-application-architecture)
+11. [API Integration](#11-api-integration)
+12. [Accessibility](#12-accessibility)
+13. [Security and Privacy](#13-security-and-privacy)
+14. [Error Handling](#14-error-handling)
+15. [Testing and Validation](#15-testing-and-validation)
+16. [Deployment](#16-deployment)
+17. [Troubleshooting](#17-troubleshooting)
+18. [Known Limitations](#18-known-limitations)
+19. [Roadmap](#19-roadmap)
+20. [Contributing](#20-contributing)
+21. [Support](#21-support)
+22. [License](#22-license)
+23. [Maintainer](#23-maintainer)
 
 ## 1. Overview
 
@@ -260,7 +260,7 @@ The root license applies only to original project material that the maintainer o
 
 ## 23. Maintainer
 
-**Brajesh Kumar**
+Brajesh Kumar
 
 Repository: https://github.com/Brajesh31/Image-Search-Website
 
