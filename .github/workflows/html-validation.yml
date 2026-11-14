@@ -1,0 +1,51 @@
+name: Static Site Validation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "index.html"
+      - "script.js"
+      - "style.css"
+      - "config.example.js"
+      - ".github/workflows/html-validation.yml"
+  pull_request:
+    paths:
+      - "index.html"
+      - "script.js"
+      - "style.css"
+      - "config.example.js"
+      - ".github/workflows/html-validation.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: static-validation-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate static application
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check JavaScript syntax
+        run: node --check script.js
+      - name: Validate HTML
+        run: npx --yes html-validate@10 index.html
+      - name: Verify required project files
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s index.html
+          test -s script.js
+          test -s style.css
+          test -s config.example.js
