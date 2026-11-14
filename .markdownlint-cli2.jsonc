@@ -5,9 +5,7 @@
     "MD022": false,
     "MD032": false,
     "MD034": false,
-    "MD036": false,
-    "MD047": false,
-    "MD051": false
+    "MD047": false
   },
   "globs": [
     "**/*.md",
