@@ -1,0 +1,17 @@
+# Local credentials and configuration
+config.js
+.env
+.env.*
+!.env.example
+
+# Operating systems and editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs and temporary files
+*.log
+npm-debug.log*
